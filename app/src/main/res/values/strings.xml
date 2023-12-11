@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">MVVM_GameEx</string>
+    <string name="app_name">Lethe</string>
+    <string name="user_profile_page">User profile page</string>
 </resources>
