@@ -1,10 +1,13 @@
 package com.example.mvvm_gameex.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import com.example.mvvm_gameex.R
 import com.example.mvvm_gameex.databinding.FragmentCreateNewDreamBinding
@@ -13,7 +16,7 @@ import com.example.mvvm_gameex.viewmodel.MainViewModel
 
 class createNewDream : Fragment() {
 
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by activityViewModels()
     private lateinit var binding: FragmentCreateNewDreamBinding
 
     override fun onCreateView(
@@ -27,15 +30,16 @@ class createNewDream : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         //binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
         // Your existing button click listener
         binding.saveButton.setOnClickListener {
             // Handle button click here
-            viewModel.title.set(binding.titleEditText.text.toString())
-            viewModel.description.set(binding.descriptionEditText.text.toString())
+            viewModel.setTitle(binding.titleEditText.text.toString())
+            viewModel.setDescription(binding.descriptionEditText.text.toString())
+            Log.d("eklenen",viewModel.titleDescriptionList.toString())
             viewModel.addToTitleDescriptionList()
         }
     }

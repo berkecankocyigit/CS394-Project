@@ -7,22 +7,37 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
-    // ObservableFields for two-way data binding
-    val title = ObservableField<String>("Title")
-    val description = ObservableField<String>()
 
-    // Mutable list to store title and description pairs
-    val titleDescriptionList: MutableList<Pair<String, String>> = mutableListOf()
+    private val _title = MutableLiveData<String>("Title")
+    val title: LiveData<String> get() = _title
 
-    // Function to add the current title and description to the list
-    fun addToTitleDescriptionList() {
-        val currentTitle = title.get() ?: ""
-        val currentDescription = description.get() ?: ""
-        titleDescriptionList.add(Pair(currentTitle, currentDescription))
+    private val _description = MutableLiveData<String>()
+    val description: LiveData<String> get() = _description
 
-        // Optionally, you can clear the fields after adding to the list
-        title.set("")
-        description.set("")
+    private val _titleDescriptionList = MutableLiveData<List<Pair<String, String>>>()
+    val titleDescriptionList: LiveData<List<Pair<String, String>>> get() = _titleDescriptionList
+
+    init {
+        _titleDescriptionList.value = emptyList()
     }
 
+    fun addToTitleDescriptionList() {
+        val currentTitle = _title.value ?: ""
+        val currentDescription = _description.value ?: ""
+
+        val currentList = _titleDescriptionList.value.orEmpty().toMutableList()
+        currentList.add(Pair(currentTitle, currentDescription))
+
+        _titleDescriptionList.value = currentList
+
+        _title.value = ""
+        _description.value = ""
+    }
+    fun setTitle(title: String) {
+        _title.value = title
+    }
+
+    fun setDescription(description: String) {
+        _description.value = description
+    }
 }

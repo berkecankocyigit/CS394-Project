@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.mvvm_gameex.R
 import com.example.mvvm_gameex.viewmodel.MainViewModel
@@ -14,7 +15,7 @@ import com.example.mvvm_gameex.databinding.FragmentMainBinding
 class MainFragment : Fragment() {
 
 
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,7 +25,7 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // Find the button by its ID
         val myButton: Button = requireView().findViewById(R.id.createNewDreamButton)
 
