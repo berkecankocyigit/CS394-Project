@@ -6,12 +6,54 @@
     tools:context=".fragments.loginPage">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Log In"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:id="@+id/myTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-300dp"
+        android:layout_marginLeft="-110dp"
+        android:text="Log in"
+        android:fontFamily="@font/garet_heavy"
+        android:textSize="40sp"
+        android:textColor="@color/light_gray"/>
 
+    <EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-175dp"
+        android:background="@drawable/rounded_rectangle_edittext"
+        android:hint="  Username"
+        android:textColorHint="@color/light_gray"
+        android:padding="12dp"
+        android:textColor="@color/light_gray"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-70dp"
+        android:background="@drawable/rounded_rectangle_edittext"
+        android:hint="  Password"
+        android:textColorHint="@color/light_gray"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColor="@color/light_gray"
+        android:textSize="18sp" />
+
+    <Button
+
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/rounded_rectangle_button"
+        android:text="Log in"
+        android:fontFamily="@font/garet_book"
+        android:textAllCaps="false"
+        android:textSize="22sp"/>
 
 </FrameLayout>
