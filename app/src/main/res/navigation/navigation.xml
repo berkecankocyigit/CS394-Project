@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainFragment_to_dreamsList"
             app:destination="@id/dreamsList" />
+        <action
+            android:id="@+id/action_mainFragment_to_userProfilePage"
+            app:destination="@id/userProfilePage" />
     </fragment>
     <fragment
         android:id="@+id/createNewDream"
@@ -43,4 +46,13 @@
         android:name="com.example.mvvm_gameex.fragments.userProfilePage"
         android:label="fragment_user_profile_page"
         tools:layout="@layout/fragment_user_profile_page" />
+    <fragment
+        android:id="@+id/navigationTop2"
+        android:name="com.example.mvvm_gameex.fragments.NavigationTop"
+        android:label="fragment_navigation_top"
+        tools:layout="@layout/fragment_navigation_top" >
+        <action
+            android:id="@+id/action_navigationTop2_to_createNewDream"
+            app:destination="@id/createNewDream" />
+    </fragment>
 </navigation>

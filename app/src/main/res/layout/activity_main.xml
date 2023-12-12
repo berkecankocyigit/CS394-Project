@@ -24,4 +24,10 @@
         app:menu="@menu/drawerlayout"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"/>
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/navigationTop"
+        android:name="com.example.mvvm_gameex.fragments.NavigationTop"/>
+
 </androidx.drawerlayout.widget.DrawerLayout>

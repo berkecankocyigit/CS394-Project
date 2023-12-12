@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here -->
     </style>
     <style name="Theme.MVVM_GameEx" parent="AppTheme" />

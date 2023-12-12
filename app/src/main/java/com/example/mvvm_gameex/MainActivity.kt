@@ -2,7 +2,10 @@ package com.example.mvvm_gameex
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -32,9 +35,16 @@ class MainActivity : AppCompatActivity() {
         setupDrawerLayout()
     }
 
+    fun openProfilePage() {
+        navController.navigate(R.id.userProfilePage)
+    }
+    fun openDreamsListPage() {
+        navController.navigate(R.id.dreamsList)
+    }
+
     private fun setupDrawerLayout(){
         val navigationView: NavigationView = findViewById(R.id.navView)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        //setupActionBarWithNavController(navController, appBarConfiguration)
         navigationView.setupWithNavController(navController)
     }
 

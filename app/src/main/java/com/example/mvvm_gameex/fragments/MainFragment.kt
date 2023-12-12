@@ -12,9 +12,7 @@ import com.example.mvvm_gameex.R
 import com.example.mvvm_gameex.viewmodel.MainViewModel
 import com.example.mvvm_gameex.databinding.FragmentMainBinding
 class MainFragment : Fragment() {
-    companion object {
-        fun newInstance() = DreamsList()
-    }
+
 
     private lateinit var viewModel: MainViewModel
     override fun onCreateView(
@@ -33,7 +31,7 @@ class MainFragment : Fragment() {
         // Set a click listener for the button
         myButton.setOnClickListener {
             // Handle button click here
-            view?.findNavController()?.navigate(R.id.action_mainFragment_to_createNewDream)
+            view?.findNavController()?.navigate(R.id.createNewDream)
         }
     }
 
