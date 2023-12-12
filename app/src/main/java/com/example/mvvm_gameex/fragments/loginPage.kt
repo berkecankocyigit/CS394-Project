@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import com.example.mvvm_gameex.R
 import com.example.mvvm_gameex.viewmodel.MainViewModel
 
@@ -29,6 +31,13 @@ class loginPage : Fragment() {
         super.onActivityCreated(savedInstanceState)
         //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
+        val myButton: Button = requireView().findViewById(R.id.loginButton)
+
+        // Set a click listener for the button
+        myButton.setOnClickListener {
+            // Handle button click here
+            view?.findNavController()?.navigate(R.id.mainFragment)
+        }
     }
 
 }

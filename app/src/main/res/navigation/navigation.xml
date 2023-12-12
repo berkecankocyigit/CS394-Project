@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/loginPage">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -54,5 +54,14 @@
         <action
             android:id="@+id/action_navigationTop2_to_createNewDream"
             app:destination="@id/createNewDream" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginPage"
+        android:name="com.example.mvvm_gameex.fragments.loginPage"
+        android:label="fragment_login_page"
+        tools:layout="@layout/fragment_login_page" >
+        <action
+            android:id="@+id/action_loginPage_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

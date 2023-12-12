@@ -46,14 +46,15 @@
 
     <Button
 
+        android:id="@+id/loginButton"
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_gravity="center"
         android:layout_marginTop="75dp"
         android:background="@drawable/rounded_rectangle_button"
-        android:text="Log in"
         android:fontFamily="@font/garet_book"
+        android:text="Log in"
         android:textAllCaps="false"
-        android:textSize="22sp"/>
+        android:textSize="22sp" />
 
 </FrameLayout>
