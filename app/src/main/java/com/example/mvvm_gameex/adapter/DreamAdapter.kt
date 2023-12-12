@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_gameex.R
 
-class DreamAdapter(private val dreamList: List<Pair<String, String>>) : RecyclerView.Adapter<DreamAdapter.DreamViewHolder>() {
+class DreamAdapter(private val dreamList: List<Pair<String, String>>,private val itemClickListener: OnItemClickListener? = null) : RecyclerView.Adapter<DreamAdapter.DreamViewHolder>() {
 
 
         class DreamViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -21,19 +21,22 @@ class DreamAdapter(private val dreamList: List<Pair<String, String>>) : Recycler
             return DreamViewHolder(view)
         }
 
-        override fun onBindViewHolder(holder: DreamViewHolder, position: Int) {
-            val (title, description) = dreamList[position]
-            holder.titleView.text = title
-            holder.descriptionView.text = description
+    override fun onBindViewHolder(holder: DreamViewHolder, position: Int) {
+        val (title, description) = dreamList[position]
+        holder.titleView.text = title
+        holder.descriptionView.text = description
 
-            // Set onClickListener to navigate to the detailed view or perform any other action
-            holder.itemView.setOnClickListener {
-                // Use a listener or navigate to the detailed view fragment
-                // For example: listener?.onDreamItemClicked(title, description)
-            }
+        // Set onClickListener to handle item click events
+        holder.itemView.setOnClickListener {
+            // Trigger the listener when an item is clicked
+            itemClickListener?.onItemClick(title, description)
         }
+    }
 
         override fun getItemCount(): Int {
             return dreamList.size
         }
+    interface OnItemClickListener {
+        fun onItemClick(title: String, description: String)
+    }
 }
