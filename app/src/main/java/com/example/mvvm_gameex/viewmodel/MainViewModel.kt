@@ -1,29 +1,28 @@
 package com.example.mvvm_gameex.viewmodel
 
+import android.util.Log
+import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
-    private val _scoreA = MutableLiveData<Int>(0)
-    val scoreA: LiveData<Int>
-        get() = _scoreA
-    private val _scoreB = MutableLiveData<Int>(0)
-    val scoreB: LiveData<Int>
-        get() = _scoreB
+    // ObservableFields for two-way data binding
+    val title = ObservableField<String>("Title")
+    val description = ObservableField<String>()
 
-//    val scoreB:Int
-//        get()= _scoreA
+    // Mutable list to store title and description pairs
+    val titleDescriptionList: MutableList<Pair<String, String>> = mutableListOf()
 
-    fun incrementScore(isTeamA: Boolean){
-        if (isTeamA) {
-            _scoreA.value = _scoreA.value!! + 1
+    // Function to add the current title and description to the list
+    fun addToTitleDescriptionList() {
+        val currentTitle = title.get() ?: ""
+        val currentDescription = description.get() ?: ""
+        titleDescriptionList.add(Pair(currentTitle, currentDescription))
 
-        }
-        else{
-            _scoreB.value = _scoreB.value!! + 1
-
-        }
-
+        // Optionally, you can clear the fields after adding to the list
+        title.set("")
+        description.set("")
     }
+
 }
