@@ -3,11 +3,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/logo_on_profile"
     tools:context=".fragments.userProfilePage">
-
+    
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/user_profile_page" />
+        android:id="@+id/myTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:text="Yakışıklı Güvenlik"
+        android:fontFamily="@font/garet_book"
+    android:textSize="22sp"
+        android:textColor="@color/light_gray"/>
+
+    <Button
+
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/rounded_rectangle_button"
+        android:text="Change name"
+        android:fontFamily="@font/garet_book"
+        android:textAllCaps="false"
+        android:textSize="22sp"/>
+
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="187.5dp"
+        android:background="@drawable/rounded_rectangle_button"
+        android:text="Change Password"
+        android:fontFamily="@font/garet_book"
+        android:textAllCaps="false"
+        android:textSize="22sp"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/rounded_rectangle_button"
+        android:text="Logout"
+        android:fontFamily="@font/garet_book"
+        android:textAllCaps="false"
+        android:textSize="22sp"/>
 
 </FrameLayout>
