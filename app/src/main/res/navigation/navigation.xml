@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_dreamsList_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_dreamsList_to_dreamDetail"
+            app:destination="@id/dreamDetail" />
     </fragment>
     <fragment
         android:id="@+id/userProfilePage"
@@ -64,4 +67,8 @@
             android:id="@+id/action_loginPage_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/dreamDetail"
+        android:name="com.example.mvvm_gameex.fragments.dreamDetail"
+        android:label="dreamDetail" />
 </navigation>

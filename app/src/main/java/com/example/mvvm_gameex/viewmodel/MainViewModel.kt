@@ -11,6 +11,9 @@ class MainViewModel : ViewModel() {
     private val _title = MutableLiveData<String>("Title")
     val title: LiveData<String> get() = _title
 
+    private val _index = MutableLiveData<Int>()
+    val index: LiveData<Int> get() = _index
+
     private val _description = MutableLiveData<String>()
     val description: LiveData<String> get() = _description
 
@@ -40,4 +43,8 @@ class MainViewModel : ViewModel() {
     fun setDescription(description: String) {
         _description.value = description
     }
+    fun setIndex(index: Int) {
+        _index.value = index
+    }
+
 }
