@@ -39,10 +39,6 @@ android {
         dataBinding = true
         viewBinding = true
     }
-    plugins {
-        id("com.android.application")
-        id("com.google.gms.google-services")
-    }
 }
 
 dependencies {
