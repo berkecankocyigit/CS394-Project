@@ -1,11 +1,11 @@
-package com.example.Lethe.adapter
+package com.example.lethe.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.Lethe.R
+import com.example.lethe.R
 
 class DreamAdapter(private val dreamList: List<Pair<String, String>>,private val itemClickListener: OnItemClickListener? = null) : RecyclerView.Adapter<DreamAdapter.DreamViewHolder>() {
 

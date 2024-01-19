@@ -1,4 +1,4 @@
-package com.example.Lethe.viewmodel
+package com.example.lethe.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

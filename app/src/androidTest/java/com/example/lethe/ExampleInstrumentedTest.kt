@@ -1,4 +1,4 @@
-package com.example.Lethe
+package com.example.lethe
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

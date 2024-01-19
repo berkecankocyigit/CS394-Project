@@ -1,4 +1,4 @@
-package com.example.Lethe.fragments
+package com.example.lethe.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.Lethe.R
-import com.example.Lethe.viewmodel.MainViewModel
-import com.example.Lethe.adapter.DreamAdapter
+import com.example.lethe.R
+import com.example.lethe.viewmodel.MainViewModel
+import com.example.lethe.adapter.DreamAdapter
 import androidx.navigation.findNavController
 
 class DreamsList : Fragment() {

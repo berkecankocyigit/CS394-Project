@@ -1,4 +1,4 @@
-package com.example.Lethe
+package com.example.lethe
 
 import org.junit.Test
 

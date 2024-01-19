@@ -8,7 +8,7 @@
     <data>
         <variable
             name="dream"
-            type="com.example.Lethe.model.Dream" />
+            type="com.example.lethe.model.Dream" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

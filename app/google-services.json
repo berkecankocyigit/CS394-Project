@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:269140439080:android:33720d6d6da530bdf9851d",
+        "mobilesdk_app_id": "1:269140439080:android:ba4312de1bcc73f0f9851d",
         "android_client_info": {
-          "package_name": "com.example.Lethe"
+          "package_name": "com.example.lethe"
         }
       },
       "oauth_client": [

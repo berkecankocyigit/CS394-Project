@@ -29,6 +29,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/navigationTop"
-        android:name="com.example.Lethe.fragments.NavigationTop"/>
+        android:name="com.example.lethe.fragments.NavigationTop"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

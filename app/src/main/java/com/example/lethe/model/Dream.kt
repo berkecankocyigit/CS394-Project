@@ -1,4 +1,4 @@
-package com.example.Lethe.model
+package com.example.lethe.model
 
 import java.io.Serializable
 

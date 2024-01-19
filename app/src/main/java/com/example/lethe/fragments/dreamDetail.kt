@@ -1,4 +1,4 @@
-package com.example.Lethe.fragments
+package com.example.lethe.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import com.example.Lethe.R
-import com.example.Lethe.databinding.FragmentDreamDetailBinding
-import com.example.Lethe.model.Dream
-import com.example.Lethe.viewmodel.MainViewModel
+import com.example.lethe.R
+import com.example.lethe.databinding.FragmentDreamDetailBinding
+import com.example.lethe.model.Dream
+import com.example.lethe.viewmodel.MainViewModel
 
 class dreamDetail : Fragment() {
 
