@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.mvvm_gameex.fragments.MainFragment"
+        android:name="com.example.Lethe.fragments.MainFragment"
         android:label="Lethe"
         tools:layout="@layout/fragment_main" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/createNewDream"
-        android:name="com.example.mvvm_gameex.fragments.createNewDream"
+        android:name="com.example.Lethe.fragments.createNewDream"
         android:label="fragment_create_new_dream"
         tools:layout="@layout/fragment_create_new_dream" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/dreamsList"
-        android:name="com.example.mvvm_gameex.fragments.DreamsList"
+        android:name="com.example.Lethe.fragments.DreamsList"
         android:label="fragment_dreams_list"
         tools:layout="@layout/fragment_dreams_list" >
         <action
@@ -46,12 +46,12 @@
     </fragment>
     <fragment
         android:id="@+id/userProfilePage"
-        android:name="com.example.mvvm_gameex.fragments.userProfilePage"
+        android:name="com.example.Lethe.fragments.userProfilePage"
         android:label="fragment_user_profile_page"
         tools:layout="@layout/fragment_user_profile_page" />
     <fragment
         android:id="@+id/navigationTop2"
-        android:name="com.example.mvvm_gameex.fragments.NavigationTop"
+        android:name="com.example.Lethe.fragments.NavigationTop"
         android:label="fragment_navigation_top"
         tools:layout="@layout/fragment_navigation_top" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginPage"
-        android:name="com.example.mvvm_gameex.fragments.loginPage"
+        android:name="com.example.Lethe.fragments.loginPage"
         android:label="fragment_login_page"
         tools:layout="@layout/fragment_login_page" >
         <action
@@ -69,6 +69,6 @@
     </fragment>
     <fragment
         android:id="@+id/dreamDetail"
-        android:name="com.example.mvvm_gameex.fragments.dreamDetail"
+        android:name="com.example.Lethe.fragments.dreamDetail"
         android:label="dreamDetail" />
 </navigation>

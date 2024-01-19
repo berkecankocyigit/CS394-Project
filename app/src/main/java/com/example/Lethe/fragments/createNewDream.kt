@@ -1,4 +1,4 @@
-package com.example.mvvm_gameex.fragments
+package com.example.Lethe.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -7,11 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModelProvider
-import com.example.mvvm_gameex.R
-import com.example.mvvm_gameex.databinding.FragmentCreateNewDreamBinding
-import com.example.mvvm_gameex.viewmodel.MainViewModel
+import com.example.Lethe.databinding.FragmentCreateNewDreamBinding
+import com.example.Lethe.viewmodel.MainViewModel
 
 
 class createNewDream : Fragment() {

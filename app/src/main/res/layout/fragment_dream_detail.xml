@@ -8,7 +8,7 @@
     <data>
         <variable
             name="dream"
-            type="com.example.mvvm_gameex.model.Dream" />
+            type="com.example.Lethe.model.Dream" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

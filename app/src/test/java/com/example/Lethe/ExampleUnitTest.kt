@@ -1,4 +1,4 @@
-package com.example.mvvm_gameex
+package com.example.Lethe
 
 import org.junit.Test
 

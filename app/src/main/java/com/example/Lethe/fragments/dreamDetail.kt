@@ -1,6 +1,5 @@
-package com.example.mvvm_gameex.fragments
+package com.example.Lethe.fragments
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,13 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.mvvm_gameex.R
-import com.example.mvvm_gameex.adapter.DreamAdapter
-import com.example.mvvm_gameex.databinding.FragmentDreamDetailBinding
-import com.example.mvvm_gameex.model.Dream
-import com.example.mvvm_gameex.viewmodel.MainViewModel
+import com.example.Lethe.R
+import com.example.Lethe.databinding.FragmentDreamDetailBinding
+import com.example.Lethe.model.Dream
+import com.example.Lethe.viewmodel.MainViewModel
 
 class dreamDetail : Fragment() {
 

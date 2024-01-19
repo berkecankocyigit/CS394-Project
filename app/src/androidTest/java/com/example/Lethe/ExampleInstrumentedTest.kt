@@ -1,4 +1,4 @@
-package com.example.mvvm_gameex
+package com.example.Lethe
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

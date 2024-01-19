@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "34718921656",
+    "project_id": "project-b692a",
+    "storage_bucket": "project-b692a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34718921656:android:54544e3a3556339d0b554d",
+        "android_client_info": {
+          "package_name": "com.example.Lethe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA40JsxLE3I7o7G0k4kt3Wig7OuLt3iHpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

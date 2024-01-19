@@ -1,4 +1,4 @@
-package com.example.mvvm_gameex.fragments
+package com.example.Lethe.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import com.example.mvvm_gameex.MainActivity
-import com.example.mvvm_gameex.R
+import com.example.Lethe.MainActivity
+import com.example.Lethe.R
 
 
 class NavigationTop : Fragment() {

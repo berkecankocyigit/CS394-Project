@@ -1,6 +1,5 @@
-package com.example.mvvm_gameex.fragments
+package com.example.Lethe.fragments
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,9 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
-import com.example.mvvm_gameex.R
-import com.example.mvvm_gameex.viewmodel.MainViewModel
-import com.example.mvvm_gameex.databinding.FragmentMainBinding
+import com.example.Lethe.R
+import com.example.Lethe.viewmodel.MainViewModel
+
 class MainFragment : Fragment() {
 
 

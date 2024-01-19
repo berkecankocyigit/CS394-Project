@@ -1,11 +1,11 @@
-package com.example.mvvm_gameex.adapter
+package com.example.Lethe.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mvvm_gameex.R
+import com.example.Lethe.R
 
 class DreamAdapter(private val dreamList: List<Pair<String, String>>,private val itemClickListener: OnItemClickListener? = null) : RecyclerView.Adapter<DreamAdapter.DreamViewHolder>() {
 

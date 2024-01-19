@@ -1,6 +1,5 @@
-package com.example.mvvm_gameex.fragments
+package com.example.Lethe.fragments
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,13 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mvvm_gameex.R
-import com.example.mvvm_gameex.viewmodel.MainViewModel
-import com.example.mvvm_gameex.adapter.DreamAdapter
-import androidx.lifecycle.Observer
+import com.example.Lethe.R
+import com.example.Lethe.viewmodel.MainViewModel
+import com.example.Lethe.adapter.DreamAdapter
 import androidx.navigation.findNavController
 
 class DreamsList : Fragment() {
