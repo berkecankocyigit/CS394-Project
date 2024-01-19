@@ -24,7 +24,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="-175dp"
         android:background="@drawable/rounded_rectangle_edittext"
-        android:hint="  Username"
+        android:hint="  Email"
         android:textColorHint="@color/light_gray"
         android:padding="12dp"
         android:textColor="@color/light_gray"
@@ -56,5 +56,30 @@
         android:text="Log in"
         android:textAllCaps="false"
         android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/dontHaveAccountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/garet_book"
+        android:text="Don't have an account?"
+        android:textColor="@color/light_gray"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:layout_marginStart="280dp"
+        android:layout_marginBottom="14dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/garet_heavy"
+        android:text="Sign Up"
+        android:textColor="@color/light_gray"
+        android:textSize="18sp" />
 
 </FrameLayout>
