@@ -6,15 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".fragments.signUp">
 
+    <TextView
+        android:id="@+id/myTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-300dp"
+        android:layout_marginLeft="-110dp"
+        android:text="Sign up"
+        android:fontFamily="@font/garet_heavy"
+        android:textSize="40sp"
+        android:textColor="@color/light_gray"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <EditText
             android:id="@+id/editTextTextEmailAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
+            android:layout_width="300dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="160dp"
+            android:background="@drawable/rounded_rectangle_edittext"
+            android:hint="  Email"
+            android:textColorHint="@color/light_gray"
+            android:padding="12dp"
+            android:textColor="@color/light_gray"
+            android:textSize="18sp"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -23,27 +42,53 @@
 
         <EditText
             android:id="@+id/editTextTextPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
+            android:layout_width="300dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="260dp"
+            android:background="@drawable/rounded_rectangle_edittext"
+            android:hint="  Password"
+            android:textColorHint="@color/light_gray"
+            android:padding="12dp"
+            android:textColor="@color/light_gray"
+            android:textSize="18sp"
             android:inputType="textPassword"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editTextTextPassword2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword" />
+            android:layout_width="300dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="360dp"
+            android:background="@drawable/rounded_rectangle_edittext"
+            android:hint="  Confirm Password"
+            android:textColorHint="@color/light_gray"
+            android:padding="12dp"
+            android:textColor="@color/light_gray"
+            android:textSize="18sp"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/signUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_width="300dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="500dp"
+            android:background="@drawable/rounded_rectangle_button"
+            android:fontFamily="@font/garet_book"
+            android:text="Sign Up"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
