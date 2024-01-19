@@ -30,12 +30,16 @@ class loginPage : Fragment() {
         super.onActivityCreated(savedInstanceState)
         //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
-        val myButton: Button = requireView().findViewById(R.id.loginButton)
-
+        val loginButton: Button = requireView().findViewById(R.id.loginButton)
+        val signUpButton: Button = requireView().findViewById(R.id.signUpButton)
         // Set a click listener for the button
-        myButton.setOnClickListener {
+        loginButton.setOnClickListener {
             // Handle button click here
             view?.findNavController()?.navigate(R.id.mainFragment)
+        }
+        signUpButton.setOnClickListener {
+            // Handle button click here
+            view?.findNavController()?.navigate(R.id.signUp)
         }
     }
 

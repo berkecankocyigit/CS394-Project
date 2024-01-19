@@ -66,9 +66,21 @@
         <action
             android:id="@+id/action_loginPage_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_loginPage_to_signUp2"
+            app:destination="@id/signUp2" />
     </fragment>
     <fragment
         android:id="@+id/dreamDetail"
         android:name="com.example.lethe.fragments.dreamDetail"
         android:label="dreamDetail" />
+    <fragment
+        android:id="@+id/signUp2"
+        android:name="com.example.lethe.fragments.signUp"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUp2_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>
