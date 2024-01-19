@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.signUp">
+    tools:context=".fragments.signUpPage">
 
     <TextView
         android:id="@+id/myTextView"
@@ -75,7 +75,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/signUp"
+            android:id="@+id/signUpButton1"
             android:layout_width="300dp"
             android:layout_height="75dp"
             android:layout_gravity="center"

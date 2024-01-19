@@ -18,7 +18,7 @@
         android:textColor="@color/light_gray"/>
 
     <EditText
-        android:id="@+id/usernameEditText"
+        android:id="@+id/emailEditTextlogin"
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_gravity="center"
@@ -31,7 +31,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/passwordEditTextlogin"
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_gravity="center"
