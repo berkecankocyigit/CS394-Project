@@ -8,26 +8,13 @@
     
     <TextView
         android:id="@+id/myTextView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:text="Yakışıklı Güvenlik"
-        android:fontFamily="@font/garet_book"
-    android:textSize="22sp"
-        android:textColor="@color/light_gray"/>
-
-    <Button
-
-        android:layout_width="300dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="75dp"
-        android:background="@drawable/rounded_rectangle_button"
-        android:text="Change name"
+        android:text="Yakışıklı Güvenlik"
         android:fontFamily="@font/garet_book"
-        android:textAllCaps="false"
-        android:textSize="22sp"/>
-
+        android:textSize="22sp"
+        android:textColor="@color/light_gray"/>
 
     <Button
         android:layout_width="300dp"
