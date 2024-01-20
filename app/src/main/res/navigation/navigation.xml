@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_mainFragment_to_userProfilePage"
             app:destination="@id/userProfilePage" />
+        <action
+            android:id="@+id/action_mainFragment_to_navigationTop2"
+            app:destination="@id/navigationTop2" />
     </fragment>
     <fragment
         android:id="@+id/createNewDream"
@@ -31,6 +34,9 @@
         <action
             android:id="@+id/action_createNewDream_to_dreamsList"
             app:destination="@id/dreamsList" />
+        <action
+            android:id="@+id/action_createNewDream_to_navigationTop2"
+            app:destination="@id/navigationTop2" />
     </fragment>
     <fragment
         android:id="@+id/dreamsList"
@@ -43,6 +49,9 @@
         <action
             android:id="@+id/action_dreamsList_to_dreamDetail"
             app:destination="@id/dreamDetail" />
+        <action
+            android:id="@+id/action_dreamsList_to_navigationTop2"
+            app:destination="@id/navigationTop2" />
     </fragment>
     <fragment
         android:id="@+id/userProfilePage"
@@ -54,6 +63,9 @@
             app:destination="@id/loginPage"
             app:popUpTo="@id/loginPage"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_userProfilePage_to_navigationTop2"
+            app:destination="@id/navigationTop2" />
     </fragment>
     <fragment
         android:id="@+id/navigationTop2"
@@ -79,7 +91,11 @@
     <fragment
         android:id="@+id/dreamDetail"
         android:name="com.example.lethe.fragments.dreamDetail"
-        android:label="dreamDetail" />
+        android:label="dreamDetail" >
+        <action
+            android:id="@+id/action_dreamDetail_to_navigationTop2"
+            app:destination="@id/navigationTop2" />
+    </fragment>
     <fragment
         android:id="@+id/signUp2"
         android:name="com.example.lethe.fragments.signUpPage"

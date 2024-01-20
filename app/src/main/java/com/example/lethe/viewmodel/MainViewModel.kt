@@ -47,7 +47,7 @@ class MainViewModel : ViewModel() {
 
         _title.value = ""
         _description.value = ""
-        Log.e("login", "live array: ${_titleDescriptionList.toString()}")
+        Log.e("login", "live array: ${_titleDescriptionList.value.toString()}")
         // Update Firestore collection
         db.document(_userID.value.toString()).update("dreamList", _titleDescriptionList.value) //update the dreamList in the database
 
@@ -63,8 +63,13 @@ class MainViewModel : ViewModel() {
                 val data = document.data
                 // Handle the data as needed
                 Log.e("login", "DocumentSnapshot data: ${data}")
-                val dreamList = data?.get("dreamList") as List<Pair<String, String>>
-                _titleDescriptionList.value = dreamList
+                val dreamList = data?.get("dreamList") as List<HashMap<String,String>>
+                _titleDescriptionList.value = dreamList.map { it
+                    val title=it["first"].toString()
+                    val description=it["second"].toString()
+                    Pair(title,description)
+                }
+                Log.e("login", "live array after: ${_titleDescriptionList.value.toString()}")
             } else {
                 Log.e("login", "User not found")
             }
@@ -73,7 +78,7 @@ class MainViewModel : ViewModel() {
                 // Handle errors
                 // e.g., unable to access Firestore
             }
-
+        Log.e("login", "live array: ${_titleDescriptionList.value.toString()}")
     }
 
 
@@ -91,5 +96,6 @@ class MainViewModel : ViewModel() {
     }
     fun setUserID(userID: String) {
         _userID.value = userID
+        fetchTitleDescriptionList()
     }
 }

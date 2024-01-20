@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     fun openProfilePage() {
         val auth = FirebaseAuth.getInstance()
         auth.currentUser?.let {
-            navController.navigate(R.id.userProfileFragment)
+            navController.navigate(R.id.userProfilePage)
         } ?: run {
             navController.navigate(R.id.loginPage)
         }
