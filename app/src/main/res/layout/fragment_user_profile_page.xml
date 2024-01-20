@@ -28,6 +28,7 @@
         android:textSize="22sp"/>
 
     <Button
+        android:id="@+id/logoutButton"
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_gravity="center"

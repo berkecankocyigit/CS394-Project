@@ -48,7 +48,13 @@
         android:id="@+id/userProfilePage"
         android:name="com.example.lethe.fragments.userProfilePage"
         android:label="fragment_user_profile_page"
-        tools:layout="@layout/fragment_user_profile_page" />
+        tools:layout="@layout/fragment_user_profile_page" >
+        <action
+            android:id="@+id/action_userProfilePage_to_loginPage"
+            app:destination="@id/loginPage"
+            app:popUpTo="@id/loginPage"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/navigationTop2"
         android:name="com.example.lethe.fragments.NavigationTop"
