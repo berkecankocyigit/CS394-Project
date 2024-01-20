@@ -8,6 +8,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.oAuthCredential
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,11 +33,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openProfilePage() {
-        navController.navigate(R.id.userProfilePage)
+        val auth = FirebaseAuth.getInstance()
+        auth.currentUser?.let {
+            navController.navigate(R.id.userProfileFragment)
+        } ?: run {
+            navController.navigate(R.id.loginPage)
+        }
+
     }
 
     fun openDreamsListPage() {
-        navController.navigate(R.id.dreamsList)
+        val auth = FirebaseAuth.getInstance()
+        auth.currentUser?.let {
+            navController.navigate(R.id.dreamsList)
+        } ?: run {
+            navController.navigate(R.id.loginPage)
+        }
     }
 
     private fun setupDrawerLayout() {
