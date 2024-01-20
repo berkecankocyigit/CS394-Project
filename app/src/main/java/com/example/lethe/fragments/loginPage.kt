@@ -61,7 +61,7 @@ class loginPage : Fragment() {
                             }
                         }*/
                         viewModel.setUserID(auth.currentUser!!.uid)
-                        view?.findNavController()?.navigate(R.id.mainFragment)
+                        view?.findNavController()?.navigate(R.id.action_loginPage_to_mainFragment)
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.e( "signInWithEmail:failure", task.exception.toString())

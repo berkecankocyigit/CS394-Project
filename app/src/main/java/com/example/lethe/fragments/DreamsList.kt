@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lethe.R
 import com.example.lethe.adapter.DreamAdapter
@@ -38,7 +39,10 @@ class DreamsList : Fragment() {
     private fun setupRecyclerView() {
         val adapter = DreamAdapter(object : DreamAdapter.OnItemClickListener {
             override fun onItemClick(title: String, description: String) {
-                // Handle item click as needed
+                // Handle item click by navigating to DreamDetail fragment
+                viewModel.titleDescriptionList.value?.indexOf(Pair(title, description))
+                    ?.let { viewModel.setIndex(it) }
+                findNavController().navigate(R.id.action_dreamsList_to_dreamDetail)
             }
         })
 

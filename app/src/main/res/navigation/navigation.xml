@@ -86,7 +86,9 @@
         tools:layout="@layout/fragment_login_page" >
         <action
             android:id="@+id/action_loginPage_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginPage_to_signUp2"
             app:destination="@id/signUp2" />
