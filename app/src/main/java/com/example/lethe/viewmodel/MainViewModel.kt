@@ -30,24 +30,21 @@ class MainViewModel : ViewModel() {
 
     init {
         // Initialize Firestore collection reference
-        Log.e("login", "init")
         _titleDescriptionList.value = emptyList()
 
     }
 
     fun addToTitleDescriptionList() {
-        Log.e("login", "addToTitleDescriptionList")
+        // Add new title and description to the list
         val currentTitle = _title.value ?: ""
         val currentDescription = _description.value ?: ""
-
         val currentList = _titleDescriptionList.value.orEmpty().toMutableList()
         currentList.add(Pair(currentTitle, currentDescription))
-
+        // Update live data
         _titleDescriptionList.value = currentList
 
         _title.value = ""
         _description.value = ""
-        Log.e("login", "live array: ${_titleDescriptionList.value.toString()}")
         // Update Firestore collection
         db.document(_userID.value.toString()).update("dreamList", _titleDescriptionList.value) //update the dreamList in the database
 
@@ -56,20 +53,17 @@ class MainViewModel : ViewModel() {
 
     private fun fetchTitleDescriptionList() {
         // Listen for changes in the Firestore collection
-        Log.e("login", "fetchTitleDescriptionList")
         db.document(_userID.value.toString()).get().addOnSuccessListener { document ->
             if (document != null) {
                 // Document exists
                 val data = document.data
                 // Handle the data as needed
-                Log.e("login", "DocumentSnapshot data: ${data}")
                 val dreamList = data?.get("dreamList") as List<HashMap<String,String>>
                 _titleDescriptionList.value = dreamList.map { it
                     val title=it["first"].toString()
                     val description=it["second"].toString()
                     Pair(title,description)
                 }
-                Log.e("login", "live array after: ${_titleDescriptionList.value.toString()}")
             } else {
                 Log.e("login", "User not found")
             }
@@ -96,6 +90,7 @@ class MainViewModel : ViewModel() {
     }
     fun setUserID(userID: String) {
         _userID.value = userID
+        // Fetch the list of titles and descriptions from Firestore
         fetchTitleDescriptionList()
     }
 }

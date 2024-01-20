@@ -38,8 +38,6 @@ class loginPage : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
         auth = FirebaseAuth.getInstance()
         // Set a click listener for the button
         binding.loginButton.setOnClickListener {
@@ -49,17 +47,7 @@ class loginPage : Fragment() {
                 .addOnCompleteListener(requireActivity()) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
-                        /*val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
-                        val db: CollectionReference = firestore.collection("users")
-                        db.get().addOnSuccessListener {
-                            //find the document ID of user
-                            for (document in it) {
-                                if (document.data["email"] == email) {
-                                    viewModel.setUserID(document.id)
-                                    Log.e("login", viewModel.userID.value.toString())
-                                }
-                            }
-                        }*/
+
                         viewModel.setUserID(auth.currentUser!!.uid)
                         view?.findNavController()?.navigate(R.id.action_loginPage_to_mainFragment)
                     } else {

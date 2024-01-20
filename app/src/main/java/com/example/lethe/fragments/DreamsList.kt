@@ -31,7 +31,7 @@ class DreamsList : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        // Set up RecyclerView and observe data from ViewModel
         setupRecyclerView()
         observeViewModelData()
     }
@@ -45,7 +45,7 @@ class DreamsList : Fragment() {
                 findNavController().navigate(R.id.action_dreamsList_to_dreamDetail)
             }
         })
-
+        // Set up the RecyclerView
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
     }

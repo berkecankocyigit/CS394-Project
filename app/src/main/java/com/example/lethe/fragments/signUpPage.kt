@@ -32,6 +32,7 @@ class signUpPage : Fragment() {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
     }
+    //check if all fields are filled out
     fun checkAllFields(email: String, password: String, password2: String):Boolean {
         Log.e("email",email)
         Log.e("password",password)
@@ -93,9 +94,11 @@ class signUpPage : Fragment() {
         return true
     }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+        // Initialize the ViewModel
         super.onActivityCreated(savedInstanceState)
         auth = FirebaseAuth.getInstance()
         val signUpButton1 = binding.signUpButton1
+        // Set a click listener for the button
         signUpButton1.setOnClickListener {
             val email = binding.editTextTextEmailAddress.text.toString()
             val password = binding.editTextTextPassword.text.toString()
@@ -104,8 +107,7 @@ class signUpPage : Fragment() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
-
-
+                            //if successful, go to login page
                             Toast.makeText(context, "Account created successfully", Toast.LENGTH_SHORT).show()
                             //firebase firestore user generate
                             val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -114,9 +116,11 @@ class signUpPage : Fragment() {
                                 "email" to email,
                                 "dreamList" to emptyList<Pair<String,String>>()
                             )
+                            //add user to firestore
                             db.document(auth.currentUser?.uid.toString()).set(userMap as Map<String, Any>).addOnSuccessListener {documentReference ->
                                 Log.d("login", "DocumentSnapshot successfully written!")
                             }
+                            //set user id in viewmodel
                             viewModel.setUserID(auth.currentUser?.uid.toString())
                             auth.signOut()
                             view?.findNavController()?.navigate(R.id.loginPage)

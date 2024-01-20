@@ -49,7 +49,6 @@ class dreamDetail : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //viewModel = ViewModelProvider(this).get(DreamDetailViewModel::class.java)
 
     }
 

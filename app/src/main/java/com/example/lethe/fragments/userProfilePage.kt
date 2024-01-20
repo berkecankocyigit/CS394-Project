@@ -21,7 +21,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class userProfilePage : Fragment() {
 
-
     private val viewModel: MainViewModel by activityViewModels()
     private lateinit var binding : FragmentUserProfilePageBinding
     private lateinit var auth : FirebaseAuth
@@ -32,24 +31,14 @@ class userProfilePage : Fragment() {
         binding = FragmentUserProfilePageBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         auth = FirebaseAuth.getInstance()
+        // Inflate the layout for this fragment
         val User: User = User(auth.currentUser?.email,viewModel.titleDescriptionList.value?.size)
+        //initialize the user object
         binding.user= User
         binding.lifecycleOwner = this
         return binding.root
     }
-    /*companion object{@BindingAdapter("emailColor")
-    @JvmStatic
-    fun setTextColorBasedOnDreamCount(textView: TextView, dreamCount: Int?) {
-
-        val color= when(dreamCount){
-            in 0..5 -> Color.WHITE
-            in 6..10 -> Color.YELLOW
-            in 10..15 -> Color.GREEN
-            else -> Color.BLUE
-        }
-
-        textView.setTextColor(color)
-    }}*/
+    //set the image based on the dream count
     companion object{@BindingAdapter("imageSelector")
     @JvmStatic
     fun setTextColorBasedOnDreamCount(ImageView: ImageView, dreamCount: Int?) {
@@ -63,16 +52,13 @@ class userProfilePage : Fragment() {
 
         ImageView.setImageResource(color)
 
-
     }}
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
         auth = FirebaseAuth.getInstance()
         binding.logoutButton.setOnClickListener {
+            // Handle button click here
             auth.signOut()
-            //view?.findNavController()?.navigate(R.id.loginPage)
             view?.findNavController()?.navigate(R.id.action_userProfilePage_to_loginPage)
         }
     }

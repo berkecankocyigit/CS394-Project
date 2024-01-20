@@ -24,10 +24,8 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // Find the button by its ID
         val myButton: Button = requireView().findViewById(R.id.createNewDreamButton)
-        //viewModel.setTitle("")//mock set title for initializing the firebase and live data
         // Set a click listener for the button
         myButton.setOnClickListener {
             // Handle button click here
