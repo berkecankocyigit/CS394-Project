@@ -66,6 +66,9 @@
         <action
             android:id="@+id/action_userProfilePage_to_navigationTop2"
             app:destination="@id/navigationTop2" />
+        <action
+            android:id="@+id/action_userProfilePage_to_changePasswordPage"
+            app:destination="@id/changePasswordPage" />
     </fragment>
     <fragment
         android:id="@+id/navigationTop2"
@@ -104,5 +107,14 @@
         <action
             android:id="@+id/action_signUp2_to_loginPage"
             app:destination="@id/loginPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordPage"
+        android:name="com.example.lethe.fragments.changePasswordPage"
+        android:label="fragment_change_password_page"
+        tools:layout="@layout/fragment_change_password_page" >
+        <action
+            android:id="@+id/action_changePasswordPage_to_userProfilePage"
+            app:destination="@id/userProfilePage" />
     </fragment>
 </navigation>
