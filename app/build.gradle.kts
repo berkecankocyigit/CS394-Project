@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+    id("kotlin-kapt")
 }
 
 android {
@@ -36,6 +37,7 @@ android {
     }
 
     buildFeatures {
+
         dataBinding = true
         viewBinding = true
     }
@@ -59,6 +61,8 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.4.0")
     implementation ("androidx.navigation:navigation-fragment-ktx:2.5.3")
     implementation ("androidx.navigation:navigation-ui-ktx:2.5.3")
+
+
 
 
 }
