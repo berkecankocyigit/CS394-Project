@@ -1,11 +1,13 @@
 package com.example.lethe.fragments
 
 import android.graphics.Color
+import android.icu.util.Calendar
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.fragment.app.activityViewModels
@@ -35,7 +37,7 @@ class userProfilePage : Fragment() {
         binding.lifecycleOwner = this
         return binding.root
     }
-    companion object{@BindingAdapter("emailColor")
+    /*companion object{@BindingAdapter("emailColor")
     @JvmStatic
     fun setTextColorBasedOnDreamCount(textView: TextView, dreamCount: Int?) {
 
@@ -47,6 +49,21 @@ class userProfilePage : Fragment() {
         }
 
         textView.setTextColor(color)
+    }}*/
+    companion object{@BindingAdapter("imageSelector")
+    @JvmStatic
+    fun setTextColorBasedOnDreamCount(ImageView: ImageView, dreamCount: Int?) {
+
+        val color= when(dreamCount){
+            in 0..5 -> R.drawable.first
+            in 6..10 -> R.drawable.second
+            in 11..15 -> R.drawable.third
+            else -> R.drawable.fourth
+        }
+
+        ImageView.setImageResource(color)
+
+
     }}
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

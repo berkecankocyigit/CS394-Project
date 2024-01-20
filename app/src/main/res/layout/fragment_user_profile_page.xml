@@ -26,14 +26,24 @@
             android:layout_marginTop="375dp"
             android:fontFamily="@font/garet_book"
             android:text="@{User.email}"
-            app:emailColor="@{User.dreamCount}"
             android:textSize="22sp"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="425dp"
+            android:src="@drawable/arti"
+            app:imageSelector="@{User.dreamCount}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/logoutButton"
