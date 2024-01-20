@@ -16,6 +16,8 @@ import com.example.lethe.databinding.FragmentLoginPageBinding
 import com.example.lethe.databinding.FragmentSignUpBinding
 import com.example.lethe.viewmodel.MainViewModel
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FirebaseFirestore
 
 class loginPage : Fragment() {
 
@@ -47,6 +49,17 @@ class loginPage : Fragment() {
                 .addOnCompleteListener(requireActivity()) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
+                        val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+                        val db: CollectionReference = firestore.collection("users")
+                        db.get().addOnSuccessListener {
+                            //find the document ID of user
+                            for (document in it) {
+                                if (document.data["email"] == email) {
+                                    viewModel.setUserID(document.id)
+                                    Log.e("login", viewModel.userID.value.toString())
+                                }
+                            }
+                        }
                         view?.findNavController()?.navigate(R.id.mainFragment)
                     } else {
                         // If sign in fails, display a message to the user.

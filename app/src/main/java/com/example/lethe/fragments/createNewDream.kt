@@ -1,5 +1,4 @@
 package com.example.lethe.fragments
-
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.lethe.databinding.FragmentCreateNewDreamBinding
 import com.example.lethe.viewmodel.MainViewModel
-
 
 class createNewDream : Fragment() {
 
@@ -22,13 +20,11 @@ class createNewDream : Fragment() {
     ): View? {
         binding = FragmentCreateNewDreamBinding.inflate(inflater, container, false)
         return binding.root
-        //return inflater.inflate(R.layout.fragment_create_new_dream, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        //binding.viewModel = viewModel
+
         binding.lifecycleOwner = this
 
         // Your existing button click listener
@@ -36,7 +32,6 @@ class createNewDream : Fragment() {
             // Handle button click here
             viewModel.setTitle(binding.titleEditText.text.toString())
             viewModel.setDescription(binding.descriptionEditText.text.toString())
-            Log.d("eklenen",viewModel.titleDescriptionList.toString())
             viewModel.addToTitleDescriptionList()
         }
     }

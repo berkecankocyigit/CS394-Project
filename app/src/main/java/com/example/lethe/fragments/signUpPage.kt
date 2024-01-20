@@ -1,6 +1,7 @@
 package com.example.lethe.fragments
 
 import android.app.AlertDialog
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
@@ -15,6 +16,8 @@ import com.example.lethe.R
 import com.example.lethe.databinding.FragmentSignUpBinding
 import com.example.lethe.viewmodel.MainViewModel
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FirebaseFirestore
 
 class signUpPage : Fragment() {
 
@@ -101,9 +104,23 @@ class signUpPage : Fragment() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
-                            //auth.signOut()
+
+
                             Toast.makeText(context, "Account created successfully", Toast.LENGTH_SHORT).show()
-                            view?.findNavController()?.navigate(R.id.mainFragment)
+                            //firebase firestore user generate
+                            val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+                            val db: CollectionReference = firestore.collection("users")
+                            val userMap = hashMapOf(
+                                "email" to email,
+                                "username" to "",
+                                "dreamList" to emptyList<Pair<String,String>>()
+                            )
+                            db.add(userMap as Map<String, Any>).addOnSuccessListener {documentReference ->
+                                viewModel.setUserID(documentReference.id)
+                                Log.d("login", "DocumentSnapshot successfully written!")
+                            }
+                            auth.signOut()
+                            view?.findNavController()?.navigate(R.id.loginPage)
                         } else {
                             Log.e("account creation error: ", it.exception.toString())
                             Toast.makeText(context, "Account creation failed", Toast.LENGTH_SHORT).show()

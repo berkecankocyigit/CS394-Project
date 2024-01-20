@@ -86,7 +86,7 @@
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
-            android:id="@+id/action_signUp2_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_signUp2_to_loginPage"
+            app:destination="@id/loginPage" />
     </fragment>
 </navigation>

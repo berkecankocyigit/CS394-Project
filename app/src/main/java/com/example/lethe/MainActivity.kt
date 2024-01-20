@@ -1,5 +1,4 @@
 package com.example.lethe
-
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -12,18 +11,19 @@ import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private val drawerLayout: DrawerLayout by lazy{
+    private val drawerLayout: DrawerLayout by lazy {
         findViewById(R.id.drawerLayout)
     }
 
     private val navController by lazy {
-        val navHostFragment =  supportFragmentManager.findFragmentById(R.id.navHost) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHost) as NavHostFragment
         navHostFragment.findNavController()
     }
 
     private val appBarConfiguration: AppBarConfiguration by lazy {
-        AppBarConfiguration(setOf(R.id.mainFragment,R.id.HistoryFragment,R.id.userProfileFragment), drawerLayout)
+        AppBarConfiguration(setOf(R.id.mainFragment, R.id.HistoryFragment, R.id.userProfileFragment), drawerLayout)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,13 +33,13 @@ class MainActivity : AppCompatActivity() {
     fun openProfilePage() {
         navController.navigate(R.id.userProfilePage)
     }
+
     fun openDreamsListPage() {
         navController.navigate(R.id.dreamsList)
     }
 
-    private fun setupDrawerLayout(){
+    private fun setupDrawerLayout() {
         val navigationView: NavigationView = findViewById(R.id.navView)
-        //setupActionBarWithNavController(navController, appBarConfiguration)
         navigationView.setupWithNavController(navController)
     }
 
