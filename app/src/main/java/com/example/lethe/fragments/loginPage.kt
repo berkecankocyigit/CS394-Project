@@ -49,7 +49,7 @@ class loginPage : Fragment() {
                 .addOnCompleteListener(requireActivity()) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
-                        val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+                        /*val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
                         val db: CollectionReference = firestore.collection("users")
                         db.get().addOnSuccessListener {
                             //find the document ID of user
@@ -59,7 +59,8 @@ class loginPage : Fragment() {
                                     Log.e("login", viewModel.userID.value.toString())
                                 }
                             }
-                        }
+                        }*/
+                        viewModel.setUserID(auth.currentUser!!.uid)
                         view?.findNavController()?.navigate(R.id.mainFragment)
                     } else {
                         // If sign in fails, display a message to the user.
