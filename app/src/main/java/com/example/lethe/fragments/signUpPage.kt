@@ -100,6 +100,7 @@ class signUpPage : Fragment() {
             val email = binding.editTextTextEmailAddress.text.toString()
             val password = binding.editTextTextPassword.text.toString()
             val password2 = binding.editTextTextPassword2.text.toString()
+            val username= binding.textViewUserName.text.toString()
             if (checkAllFields(email, password, password2)) {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
@@ -112,7 +113,7 @@ class signUpPage : Fragment() {
                             val db: CollectionReference = firestore.collection("users")
                             val userMap = hashMapOf(
                                 "email" to email,
-                                "username" to "",
+                                "username" to username,
                                 "dreamList" to emptyList<Pair<String,String>>()
                             )
                             db.add(userMap as Map<String, Any>).addOnSuccessListener {documentReference ->
