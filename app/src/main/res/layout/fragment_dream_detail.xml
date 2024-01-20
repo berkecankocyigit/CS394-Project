@@ -9,6 +9,11 @@
         <variable
             name="dream"
             type="com.example.lethe.model.Dream" />
+
+        <!-- Add a variable for the viewModel -->
+        <variable
+            name="viewModel"
+            type="com.example.lethe.viewmodel.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -59,6 +64,16 @@
                 android:textColor="@color/white" />
 
         </ScrollView>
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="true"
+            android:scrollbars="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/descriptionScrollView2"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
